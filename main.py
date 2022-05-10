@@ -5,17 +5,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def index_page():
+    """Главная страница"""
     return make_nice_cand_content(load_candidates(), make_img=False)
 
 
 @app.route('/candidates/<int:cand_id>/')
 def candidate_page(cand_id):
+    """Страница с кандидатом по его id"""
     cand = get_cand_by_id(load_candidates(), cand_id)
     return make_nice_cand_content(cand, make_img=True)
 
 
 @app.route('/skills/<skill>/')
 def skills_search_page(skill):
+    """Старница поиска кандидатов по их умениям"""
     cands = get_cands_by_skill(load_candidates(), skill)
     return make_nice_cand_content(cands, make_img=True)
 
