@@ -16,7 +16,7 @@ def make_nice_cand_content(data:dict, make_img=False):
     content = ""
     print(data)
     if data is None or data == []:
-        return STYLES+'''<pre>Таких у нас нет! Но мы их купим  >:)</pre>'''
+        return STYLES+'''<pre>Ты что наделал!? Зачем все сломал!? >:)</pre>'''
     if type(data) == dict:
         data = [data]
     
